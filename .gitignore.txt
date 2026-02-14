@@ -1,0 +1,23 @@
+# Arquivos de Compilação/Binários
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.so
+*.dylib
+*.dll
+
+# Pastas de Build (comum em CMake, Visual Studio, etc.)
+build/
+bin/
+obj/
+Debug/
+Release/
+
+# Arquivos de IDE
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln
