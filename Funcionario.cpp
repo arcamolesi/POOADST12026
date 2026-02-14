@@ -1,5 +1,6 @@
 //Funcionario.cpp
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
 #include "Funcionario.h"
@@ -9,28 +10,22 @@ int main () {
    func1.ler();
    func1.imprimir();
 
-   /* o trecho abaixo infringe a regra do encapsulamento
-      pois tem acesso direto aos valores dos atributos
-      que foram encapsulados usando o modificador "private"
-   cout << "Informe nome do func1: ";
-   cin >> func1.nome;
-   cout << "Nome func1: " << func1.nome;
-   */
+    //infringindo a regra do encapsulamento
+   //cout << "Nome func1: " << func1.nome << endl;
+   //func1.salario = 5000;
+  // cout << "Salario func1: " << func1.salario << endl;
 
+  cout << "\nNome func1: " << func1.getNome() << endl;
 
-   cout << "\nNome do funcionario func1: " << func1.getNome() << endl;
-   cout << "\nSalario func1: " << func1.getSalario() << endl;
+  func1.setId(45);
+  cout << "\nID func1: " << func1.getId() << endl ;
 
-   cout << "\nInforme novo id func1: ";
-   func1.setId(789);
-   func1.setSalario(30);
-   func1.imprimir();
+  func1.setSalario(10001);
+  cout << "Salario func1: " << func1.getSalario() << endl;
 
-   func1.setSalario(30000);
-   func1.imprimir();
+  func1.setSalario(4000);
+  cout << "Salario func1: " << func1.getSalario() << endl;
 
-   func1.setSalario(15000);
-   func1.imprimir();
-
-
+  func1.setSalario(200);
+  cout << "Salario func1: " << func1.getSalario() << endl;
 }

@@ -1,62 +1,56 @@
 //Funcionario.h
-
 class Funcionario{
-    //atributos
-    private:
-      int id;
-      string nome;
-      float salario;
 
-    //métodos
-    public:
-      void ler(); //protótipo do método ler
-      void imprimir();  //protótipo do método imprimir
+  //atributos
+   private:
+     int id;
+     string nome;
+     float salario;
 
-      //métodos de acesso aos valores dos atributos - geters
-      //int getId() { return id;}
-      int getId();
-      string getNome() {return this->nome;}
-      float getSalario() {return this->salario;}
+  //métodos
+   public:
+     void ler();  //protótipo do método ler
+     void imprimir();  //protótipo do método imprimir
 
-      //métodos de alteração dos valores dos atributos - seters
-      void setId(int id) {
-        this->id = id;
-      }
+     //métodos geters - permite Acesso aos dados
+     int getId() {return this->id;}
+     string getNome() {return this->nome;}
+     float getSalario() {return this->salario;}
 
-      void setNome (string nome){
+     //métodos seters - alterar valor dos atributos
+     void setId(int id) {
+         this->id = id;
+     }
+
+     void setNome(string nome){
          this->nome = nome;
-      }
+     }
 
-      void setSalario(float salario){
-          //this->salario = salario;
-          if (salario >=1500 && salario < 20000){
-            this->salario = salario;
-          }
-          else { this->salario = 1500;}
-      }
+     void setSalario(float salario){
+         if(salario <=1500 || salario > 10000)
+            this->salario = 1500;
+         else this->salario = salario;
+
+     }
 
 };
 
-void Funcionario::ler(){
-    cout << "\nLer Dados de funcionario\n";
-    cout << "Informe ID: ";
-    cin >> id;
-    cout << "Informe nome: ";
-    cin >> nome;
-    cout << "Informe salario: ";
-    cin >> salario;
+void Funcionario::ler(){ //corpo do método ler()
+   cout << "\nLeitura Dados Funcionario\n";
+   cout << "Informe ID: ";
+   cin >> id;
+   cin.ignore();
+   cout << "Informe Nome: ";
+   getline (cin, nome);  //cin >> nome;
+   cout << "Informe Salario: ";
+   cin >> salario;
 }
-
 
 void Funcionario::imprimir(){
    cout << "\nImprimir Funcionario\n";
-   cout << "ID: " << getId() << endl;
+   cout << "ID: " << id << endl;
    cout << "Nome: " << nome << endl;
    cout << "Salario: " << salario << endl;
-}
-
-int Funcionario::getId(){
-   return this->id;
 }
 
 
