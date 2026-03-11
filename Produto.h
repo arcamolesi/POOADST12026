@@ -1,39 +1,53 @@
 //Produto.h
-// classe Produto
-
-class Produto {
-   public:
-    //atributos
+class Produto: Categoria {
+  private:
     int id;
     string descricao;
+    Categoria categoria;
     float quantidade;
     float valor;
 
-    //métodos
-    void ler(){
-       cout << "\n Ler Dados de Produto\n";
-       cout << "Informe ID: ";
-       cin >> id;
-       cout << "Informe Descricao: ";
-       cin >> descricao;
-       cout << "Informe Quantidade: ";
-       cin >> quantidade;
-       cout << "Informe Valor: ";
-       cin >> valor;
-    }
+  public:
+    Produto();
+    Produto(int, string, Categoria, float, float);
 
-    void imprimir(){
-      cout << "\nImprimir Produto\n";
-      cout << "ID: " << id << endl;
-      cout << "Descricao: " << descricao << endl;
-      cout << "Quantidade: " << quantidade << endl;
-      cout << "Valor: " << valor << endl;
-    }
-
-    void aumentar(){
-       valor = valor + (valor * 20 /100);
-       //valor = valor + valor * 0.20;
-       //valor *= 1.2;
-    }
+    void imprimir();
 
 };
+
+Produto::Produto() {
+   this->id = 0;
+   this->descricao = "";
+   this->categoria = Categoria();
+   this->quantidade = 0;
+   this->valor = 0;
+}
+
+Produto::Produto(int id, string desc, Categoria cat, float qtde, float val){
+   this->id = id;
+   this->descricao = desc;
+   this->categoria = cat;
+   this->quantidade = qtde;
+   this->valor = val;
+}
+
+
+
+
+
+void Produto::imprimir(){
+   cout << "\nImprimir Produto\n";
+   cout << "ID Produto: " << this->id << endl;
+   cout << "Descricao Produto: " << this->descricao << endl;
+   cout << "Id Cat: " << this->categoria.getId() << endl;
+   cout << "Descricao Cat: " << this->categoria.getDescricao() << endl;
+   cout << "Quantidade: " << this->quantidade << endl;
+   cout << "Valor: " << this->valor << endl;
+}
+
+
+
+
+
+
+
