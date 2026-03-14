@@ -1,6 +1,6 @@
 //Categoria.h
 class Categoria{
-  private:
+  protected:
     int id;
     string descricao;
 

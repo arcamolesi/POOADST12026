@@ -8,8 +8,23 @@ class Produto: Categoria {
     float valor;
 
   public:
+    //construtores
     Produto();
     Produto(int, string, Categoria, float, float);
+
+    //gets
+    int getId() {return this->id;}
+    string getDescricao() {return this->descricao;}
+    Categoria getCategoria() {return this->categoria;}
+    float getQuantidade() {return this->quantidade;}
+    float getValor() {return this->valor;}
+
+    //sets
+    void setId(int id) {this->id = id;}
+    void setDescricao(string desc) {this->descricao = desc;}
+    void setCategoria(Categoria cat) {this->categoria = cat;}
+    void setQuantidade(float qtde) {this->quantidade = quantidade;}
+    void setValor(float val) {this->valor = val;}
 
     void imprimir();
 
@@ -30,10 +45,6 @@ Produto::Produto(int id, string desc, Categoria cat, float qtde, float val){
    this->quantidade = qtde;
    this->valor = val;
 }
-
-
-
-
 
 void Produto::imprimir(){
    cout << "\nImprimir Produto\n";
